@@ -1,4 +1,4 @@
-'''
+"""
 BFS time complexity : O(|E|)
 BFS space complexity : O(|V|)
 
@@ -13,23 +13,24 @@ If grid is
 [[1,0,1,1,1,1],
  [1,0,1,0,1,0],
  [1,0,1,0,1,1],
- [1,1,1,0,1,1]], 
+ [1,1,1,0,1,1]],
 the answer is: 14
 
 Ex 2)
 If grid is
 [[1,0,0],
  [0,1,1],
- [0,1,1]], 
+ [0,1,1]],
 the answer is: -1
-'''
+"""
+
 
 def maze_search(grid):
-    dx = [0,0,-1,1]
-    dy = [-1,1,0,0]
+    dx = [0, 0, -1, 1]
+    dy = [-1, 1, 0, 0]
     n = len(grid)
     m = len(grid[0])
-    q = [(0,0,0)]
+    q = [(0, 0, 0)]
     visit = [[0]*m for _ in range(n)]
     if grid[0][0] == 0:
         return -1
@@ -41,8 +42,8 @@ def maze_search(grid):
         for k in range(4):
             x = i + dx[k]
             y = j + dy[k]
-            if x>=0 and x<n and y>=0 and y<m:
-                if grid[x][y] ==1 and visit[x][y] == 0:
+            if (0 <= x < n and y >= 0 and y) < m:
+                if grid[x][y] == 1 and visit[x][y] == 0:
                     visit[x][y] = 1
-                    q.append((x,y,step+1))
+                    q.append((x, y, step+1))
     return -1

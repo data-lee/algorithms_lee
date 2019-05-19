@@ -1,10 +1,10 @@
-import collections
-
+# import collections
 """
 do BFS from each building, and decrement all empty place for every building visit
 when grid[i][j] == -b_nums, it means that grid[i][j] are already visited from all b_nums
 and use dist to record distances from b_nums
 """
+
 
 def shortest_distance(grid):
     if not grid or not grid[0]:
@@ -27,14 +27,14 @@ def shortest_distance(grid):
 
     return res if res!=float('inf') else -1
 
+
 def bfs(grid, matrix, i, j, count):
     q = [(i, j, 0)]
     while q:
         i, j, step = q.pop(0)
         for k, l in [(i-1,j), (i+1,j), (i,j-1), (i,j+1)]:
             # only the position be visited by count times will append to queue
-            if 0<=k<len(grid) and 0<=l<len(grid[0]) and \
-                    matrix[k][l][1]==count and grid[k][l]==0:
+            if 0 <= k <len(grid) and 0 <= l < len(grid[0]) and matrix[k][l][1] == count and grid[k][l] == 0:
                 matrix[k][l][0] += step+1
                 matrix[k][l][1] = count+1
                 q.append((k, l, step+1))
