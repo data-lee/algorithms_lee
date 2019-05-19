@@ -17,7 +17,7 @@ setup(
     long_description=long_description(),
     long_description_content_type="text/markdown",
     url='https://github.com/liyang101010/algorithms_lee',
-    author='Algorithms lee',
+    author='lee',
     author_email="ly61220271@gmail.com",
     license='MIT',
     packages=find_packages(),
