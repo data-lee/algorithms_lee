@@ -1,4 +1,4 @@
-'''
+"""
 Given a matrix of words and a list of words to search,
 return a list of words that exists in the board
 This is Word Search II on LeetCode
@@ -11,13 +11,13 @@ board = [
          ]
 
 words = ["oath","pea","eat","rain"]
-'''
+"""
 
 
 def find_words(board, words):
 
     def backtrack(board, i, j, trie, pre, used, result):
-        '''
+        """
         backtrack tries to build each words from
         the board and return all words found
 
@@ -32,7 +32,7 @@ def find_words(board, words):
         @param: result, the resulting set that contains all words found
 
         @return: list of words found
-        '''
+        """
 
         if '#' in trie:
             result.add(pre)

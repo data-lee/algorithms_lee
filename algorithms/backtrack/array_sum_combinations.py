@@ -17,7 +17,7 @@ import itertools
 from functools import partial
 
 
-def array_sum_combinations(A, B, C, target):
+def array_sum_combinations(aa, bb, cc, target):
 
     def over(constructed_sofar):
         sum = 0
@@ -31,11 +31,11 @@ def array_sum_combinations(A, B, C, target):
         return to_stop, reached_target
 
     def construct_candidates(constructed_sofar):
-        array = A
+        array = aa
         if 1 == len(constructed_sofar):
-            array = B
+            array = bb
         elif 2 == len(constructed_sofar):
-            array = C
+            array = cc
         return array
 
     def backtrack(constructed_sofar=[], res=[]):
@@ -56,7 +56,7 @@ def array_sum_combinations(A, B, C, target):
     return res
 
 
-def unique_array_sum_combinations(A, B, C, target):
+def unique_array_sum_combinations(aa, bb, cc, target):
     """
     1. Sort all the arrays - a,b,c. - This improves average time complexity.
     2. If c[i] < Sum, then look for Sum - c[i] in array a and b.
@@ -68,11 +68,11 @@ def unique_array_sum_combinations(A, B, C, target):
     """
     def check_sum(n, *nums):
         if sum(x for x in nums) == n:
-            return (True, nums)
+            return True, nums
         else:
-            return (False, nums)
+            return False, nums
 
-    pro = itertools.product(A, B, C)
+    pro = itertools.product(aa, bb, cc)
     func = partial(check_sum, target)
     sums = list(itertools.starmap(func, pro))
 
