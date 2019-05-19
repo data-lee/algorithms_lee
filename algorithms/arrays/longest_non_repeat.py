@@ -28,6 +28,7 @@ def longest_non_repeat_v1(string):
         max_length = max(max_length, i - j + 1)
     return max_length
 
+
 def longest_non_repeat_v2(string):
     """
     Find the length of the longest substring
@@ -45,6 +46,7 @@ def longest_non_repeat_v2(string):
             max_len = max(max_len, index - start + 1)
         used_char[char] = index
     return max_len
+
 
 # get functions of above, returning the max_len and substring
 def get_longest_non_repeat_v1(string):
@@ -67,6 +69,7 @@ def get_longest_non_repeat_v1(string):
             max_length = i - j + 1
             sub_string = string[j: i + 1]
     return max_length, sub_string
+
 
 def get_longest_non_repeat_v2(string):
     """
